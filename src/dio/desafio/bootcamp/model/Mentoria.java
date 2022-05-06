@@ -1,38 +1,29 @@
 package dio.desafio.bootcamp.model;
 
-public class Mentoria {
+import java.time.LocalDate;
 
-    private String titulo;
+public class Mentoria extends Conteudo{
 
-    private String descricao;
+    private LocalDate dataMentoria;
 
-    private int dataMentoria;
-
-    public void calcularXp(){
-
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public int getDataMentoria() {
+    public LocalDate getDataMentoria() {
         return dataMentoria;
     }
 
-    public void setDataMentoria(int dataMentoria) {
+    public void setDataMentoria(LocalDate dataMentoria) {
         this.dataMentoria = dataMentoria;
+    }
+
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20d;
+    }
+
+    @Override
+    public String toString() {
+        return "Mentoria{Titulo: " + getTitulo() +
+                ", descricao: " + getDescricao() +
+                ", dataMentoria=" + dataMentoria +
+                '}';
     }
 }
